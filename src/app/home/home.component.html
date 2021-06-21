@@ -1,0 +1,86 @@
+
+
+<app-home-header [trendingMovies]='trendingMovies'></app-home-header>
+
+
+
+<div class="container">
+
+<div class="row py-2">
+
+<div class="col-md-4 d-flex align-items-center">
+<div class="trend position-relative">
+ 
+<h2 class="pt-4">Trending Movies to Wath Right Now</h2>
+<p>most watched movies by days</p>
+</div>
+</div>
+
+<div class="col-md-2 " *ngFor='let movie of trendingMovies'>
+<div class="movies position-relative">
+  
+  <a [routerLink]='["/movieDetatils" ,movie.id]' class=" text-decoration-none text-white">
+    <img [src]="prefix+movie.poster_path" [alt]="movie.title" class="w-100">
+    <h3 class="h6">{{movie.title}}</h3>
+    <div class="vote">{{movie.vote_average}}</div>
+  </a>
+  
+ 
+
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="row py-2">
+
+  <div class="col-md-4 d-flex align-items-center">
+  <div class="trend position-relative">
+  <h2 class="pt-4">Trending tv to Wath Right Now</h2>
+  <p>most watched tv by days</p>
+  </div>
+  </div>
+  <div class="col-md-2 " *ngFor='let tv of trendingTv'>
+  <div class="movies position-relative">
+      
+  <a [routerLink]='["/movieDetatils" ,tv.id]' class=" text-decoration-none text-white">
+    <img [src]="prefix+tv.poster_path" [alt]="tv.title" class="w-100">
+    <h3 class="h6">{{tv.title}}</h3>
+    <div class="vote">{{tv.vote_average}}</div>
+  </a>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+
+
+
+  <div class="row py-2">
+
+    <div class="col-md-4 d-flex align-items-center">
+    <div class="person position-relative">
+    <h2 class="pt-4">person tv to Wath Right Now</h2>
+    <p>most watched person by days</p>
+    </div>
+    </div>
+
+    <div class="col-md-2 " *ngFor='let person of trendingPerson'>
+    <div class="movies position-relative">
+      
+      <img [src]="prefix+person.profile_path" [alt]="person.name" class="w-100">
+      <h3 class="h6">{{person.name}}</h3>
+  
+    </div>
+    </div>
+    </div>
+</div>
